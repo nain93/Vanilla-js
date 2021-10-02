@@ -1,12 +1,14 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: "./index.js",
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "assets"),
+    path: path.resolve(__dirname, "build"),
   },
-  mode: "development",
+  mode: "production",
   devServer: {
     host: "localhost",
     hot: true,
@@ -14,6 +16,12 @@ module.exports = {
     open: true,
     historyApiFallback: true,
   },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: "index.html",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -26,8 +34,12 @@ module.exports = {
         },
       },
       {
+        test: /\.hbs$/,
+        loader: "handlebars-loader",
+      },
+      {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },

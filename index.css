@@ -1,0 +1,23 @@
+.container {
+  margin: 0 auto;
+  max-width: 768px;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  cursor: pointer;
+  width: 100%;
+}
+
+.nav-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main input {
+}

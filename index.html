@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>GitHub Stars</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>GitHub Stars</h1>
+      </header>
+      <nav class="nav">
+        <ul class="nav-box">
+          <li class="history" route="/api">API</li>
+          <li class="history" route="/local">로컬</li>
+        </ul>
+      </nav>
+      <section class="main">
+        <form class="search-form">
+          <input
+            placeholder="검색어를 입력하세요"
+            type="text"
+            class="search-input"
+          />
+          <button class="search-button">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+        <ul class="profile-list"></ul>
+      </section>
+    </div>
+  </body>
+</html>
