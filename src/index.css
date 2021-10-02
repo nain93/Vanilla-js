@@ -1,7 +1,6 @@
 .container {
   margin: 0 auto;
   max-width: 768px;
-  background-color: rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 ::\-webkit-scrollbar {
@@ -15,6 +14,8 @@ ul {
 
 button {
   cursor: pointer;
+  background-color: inherit;
+  border: none;
 }
 
 .nav-box {
@@ -26,10 +27,9 @@ button {
   cursor: pointer;
   padding: 10px 0;
   width: 100%;
-  border: none;
 }
 
-.histoty_onClick {
+.history_onClick {
   cursor: pointer;
   padding: 10px 0;
   width: 100%;

@@ -1,16 +1,19 @@
-const apiTemplate = require("./pages/api.hbs");
-const localTemplate = require("./pages/local.hbs");
+const { default: ROUTE_PATH } = require("./src/constants/routePath");
+const apiTemplate = require("./src/pages/api.hbs");
+const localTemplate = require("./src/pages/local.hbs");
 
 const Api = apiTemplate();
 const Local = localTemplate();
 
+const { API, LOCAL } = ROUTE_PATH;
+
 const routes = {
-  "/api": Api,
-  "/local": Local,
+  API: Api,
+  LOCAL: Local,
 };
 
 const initialRoutes = (element) => {
-  renderHTML(element, routes["/api"]);
+  renderHTML(element, routes[API]);
 
   window.onpopstate = () =>
     renderHTML(element, routes[window.location.pathname]);
