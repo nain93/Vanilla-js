@@ -1,5 +1,6 @@
 import "./index.css";
 import { handlePushHistory, initialRoutes } from "./router";
+import { searchApi } from "./api";
 
 const historyLink = document.querySelectorAll(".history");
 const profileDiv = document.querySelector(".profile-list");
@@ -8,19 +9,42 @@ const searchInput = document.querySelector(".search-input");
 
 initialRoutes(profileDiv);
 
-const searchObjFn = (text) => {
-  return {
-    id: String(Date.now()),
-    text,
-  };
-};
-
 const handleSearch = () => {
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const listObj = searchObjFn(searchInput.value);
+    getUsersByAPI(searchInput.value);
     searchInput.value = "";
-    console.log(listObj);
+  });
+};
+
+const getUsersByAPI = async (searchText) => {
+  let result = [];
+  try {
+    const res = await searchApi.search(searchText);
+    result = res.data.items;
+    handleShowList(result);
+    console.log(result, "data");
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+// * 받아온 데이터를 화면에 뿌려주는 함수
+const handleShowList = (result) => {
+  profileDiv.textContent = "";
+  result.forEach((item) => {
+    const li = document.createElement("li");
+    const profileImg = document.createElement("img");
+    const span = document.createElement("span");
+    const searchBtn = document.createElement("button");
+    li.className = "search-list";
+    profileDiv.appendChild(li);
+    profileImg.className = "profile-img";
+    profileImg.src = item.avatar_url;
+
+    li.append(profileImg, span, searchBtn);
+
+    span.textContent = item.login;
   });
 };
 

@@ -4,14 +4,17 @@
   background-color: rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+::\-webkit-scrollbar {
+  display: none;
+}
 
 ul {
   list-style: none;
   padding: 0;
 }
-ul li {
+
+button {
   cursor: pointer;
-  width: 100%;
 }
 
 .nav-box {
@@ -19,5 +22,34 @@ ul li {
   justify-content: space-around;
 }
 
+.history {
+  cursor: pointer;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+}
+
+.histoty_onClick {
+  cursor: pointer;
+  padding: 10px 0;
+  width: 100%;
+  border-bottom: 3px solid blue;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
 .main input {
+}
+
+.search-list {
+  border-bottom: 1px solid black;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
