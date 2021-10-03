@@ -6,6 +6,9 @@
 ::\-webkit-scrollbar {
   display: none;
 }
+* {
+  box-sizing: border-box;
+}
 
 ul {
   list-style: none;
@@ -43,10 +46,10 @@ button {
   object-fit: cover;
 }
 
-.main input {
+.profile-list {
 }
 
-.search-list {
+.profile-item {
   border-bottom: 1px solid black;
   padding: 20px 0;
   display: flex;

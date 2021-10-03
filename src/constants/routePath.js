@@ -1,5 +1,5 @@
 const ROUTE_PATH = {
-  API: "/api",
+  API: "/",
   LOCAL: "/local",
 };
 

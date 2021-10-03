@@ -7,10 +7,10 @@ const Local = localTemplate();
 
 const { API, LOCAL } = ROUTE_PATH;
 
-const routes = {
-  API: Api,
-  LOCAL: Local,
-};
+let routes = {};
+
+routes[API] = Api;
+routes[LOCAL] = Local;
 
 const initialRoutes = (element) => {
   renderHTML(element, routes[API]);
