@@ -4,6 +4,7 @@
 - npm install
 - npm start
 - npm build
+
 ![134](https://user-images.githubusercontent.com/73378472/135773778-46692422-8c66-405f-bc6c-f5bcfdfe32c7.gif)
 
 api 검색 후 즐겨찾기를 하면 로컬에 저장이되고 로컬에서 검색이 되나,
